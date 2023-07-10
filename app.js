@@ -17,8 +17,14 @@ function cleanSketch() {
 function populateSketch(size) {
     for (let i=0; i<size*size; i++) {
         const div = document.createElement('div');
+        div.addEventListener('mouseover', e => {
+            let color = Math.floor(Math.random()*16777215).toString(16);
+            e.target.style.backgroundColor = '#' + color;
+        })
+        
         div.style.width = 600/(size) + 'px';
         div.style.height = 400/(size) + 'px';
+        
         sketch.appendChild(div);
     }
 }
