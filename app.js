@@ -1,9 +1,18 @@
 const sketch = document.querySelector('.container.sketch');
 let divCount = 0;
 
+function resetDivColors() {
+    const divs = document.querySelectorAll('.container.sketch div');
+    
+    if (divs.length > 0) {
+        for (const div of divs) {
+            div.style.backgroundColor = 'white';
+        }
+    }
+}
+
 function cleanSketch() {
     const divs = document.querySelectorAll('.container.sketch div');
-    console.log(divs);
     
     if (divs.length > 0) {
         for (const div of divs) {
@@ -44,7 +53,7 @@ buttons.forEach(button => button.addEventListener('click', e => {
         if (sketch.hasChildNodes()) cleanSketch();
         chooseSizeBTN();  
     } else if (e.target.innerText === 'Reset') {
-
+        resetDivColors();
     } else if (e.target.innerText === 'Erase') {
         cleanSketch();
     }
