@@ -35,6 +35,7 @@ function chooseSizeBTN() {
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => button.addEventListener('click', e => {
     if (e.target.innerText === 'Choose Size') {
+        if (sketch.hasChildNodes()) cleanSketch();
         chooseSizeBTN();  
     } else if (e.target.innerText === 'Reset') {
 
