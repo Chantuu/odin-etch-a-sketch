@@ -25,7 +25,7 @@ function populateSketch(size) {
 
 function chooseSizeBTN() {
     divCount = +prompt('Please choose even number from 1 to 64')
-    if ((divCount%2 === 0 && divCount <= 64 && divCount > 1) || divCount === 1) {
+    if (divCount <= 64 && divCount >= 1) {
         populateSketch(divCount);
     } else {
         alert('Incorrect input. Please try again!');
