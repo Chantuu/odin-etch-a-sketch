@@ -30,8 +30,8 @@ function populateSketch(size) {
 }
 
 function chooseSizeBTN() {
-    divCount = +prompt('Please choose even number from 1 to 64')
-    if (divCount <= 64 && divCount >= 1) {
+    divCount = +prompt('Please choose grid size from 1 to 40')
+    if (divCount <= 40 && divCount >= 1) {
         populateSketch(divCount);
     } else {
         alert('Incorrect input. Please try again!');
