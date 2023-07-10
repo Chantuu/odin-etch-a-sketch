@@ -1,6 +1,19 @@
 const sketch = document.querySelector('.container.sketch');
 let divCount = 0;
 
+function cleanSketch() {
+    const divs = document.querySelectorAll('.container.sketch div');
+    console.log(divs);
+    
+    if (divs.length > 0) {
+        for (const div of divs) {
+            sketch.removeChild(div);
+        }
+    } else {
+        alert('Sketch is already clean');
+    }
+}
+
 function populateSketch(size) {
     for (let i=0; i<size*size; i++) {
         const div = document.createElement('div');
@@ -26,6 +39,6 @@ buttons.forEach(button => button.addEventListener('click', e => {
     } else if (e.target.innerText === 'Reset') {
 
     } else if (e.target.innerText === 'Erase') {
-
+        cleanSketch();
     }
 }));
